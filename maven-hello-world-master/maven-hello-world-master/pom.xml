@@ -88,6 +88,11 @@
                   </goals>
               </execution>
           </executions>
+	      <configuration>
+		      <serverId>nexus</serverId>
+		      <nexusUrl>http://168.61.212.3:8443/repository/POCRepository/</nexusUrl>
+		      <skipStaging>true</skipStaging>
+		</configuration>
       </plugin>
       <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
@@ -105,6 +110,26 @@
               </compilerArgs>
           </configuration>
       </plugin>
+	    <plugin>
+		    <artifactId>maven-deploy-plugin</artifactId>
+		    <version>2.8.1</version>
+		    <executions>
+			    <execution>
+				    <id>default-deploy</id>
+				    <phase>deploy</phase>
+				    <goals>
+					    <goal>deploy</goal>
+					    </goals>
+				    </execution>
+			    </executions>
+		</plugin>
+	    
     </plugins>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<url>http://168.61.212.3:8443/repository/POCRepository/</url>
+			</snapshotRepository>
+	</distributionManagement>
   </build>
 </project>
