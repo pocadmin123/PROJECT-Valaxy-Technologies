@@ -38,8 +38,8 @@
   </dependencies>
 	<distributionManagement>
 		<snapshotRepository>
-			<id>nexus-snapshots</id>
-			<url>http://168.61.212.3:8443/repository/POCRepository/</url>
+			<id>deployment</id>
+			<url>http://168.61.212.3:8443/#browse/browse:POCRepository</url>
 			</snapshotRepository>
 	</distributionManagement>
   <build>
@@ -96,7 +96,7 @@
           </executions>
 	      <configuration>
 		      <serverId>nexus</serverId>
-		      <nexusUrl>http://168.61.212.3:8443/repository/POCRepository/</nexusUrl>
+		      <nexusUrl>http://168.61.212.3:8443/#browse/browse:POCRepository</nexusUrl>
 		      <skipStaging>true</skipStaging>
 		</configuration>
       </plugin>
